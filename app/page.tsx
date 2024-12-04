@@ -4,7 +4,7 @@ import { calculateFinalPrice, processOrder } from "./utils/discount-util";
 export default function Home() {
 
   const n1 = processOrder(1,1,'DISCOUNT10')
-  const n2 = calculateFinalPrice(100, 'DISCOUNT10')
+  const n3 = calculateFinalPrice(100, 'DISCOUNT10')
  
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -98,7 +98,7 @@ export default function Home() {
       </footer>
 
       <p>{n1}</p>
-      <p>{n2}</p>
+      <p>{n3}</p>
     </div>
   );
 }
