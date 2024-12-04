@@ -1,4 +1,4 @@
-function processOrder(orderId: number, userId: number, discountCode: string): void {
+function processOrder(orderId: number, userId: number, discountCode: string): string {
     // Check if the user is eligible for a discount
     if (discountCode === "DISCOUNT10") {
         console.log(`User ${userId} gets a 10% discount on order ${orderId}.`);
@@ -13,6 +13,7 @@ function processOrder(orderId: number, userId: number, discountCode: string): vo
 
     // Send a confirmation email
     console.log(`Sending confirmation email to user ${userId}.`);
+    return  `Sending confirmation email to user ${userId}.`
 }
 
 function calculateDiscount10(price: number): number {
