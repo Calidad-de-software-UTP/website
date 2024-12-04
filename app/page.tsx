@@ -5,7 +5,47 @@ export default function Home() {
 
   const n1 = processOrder(1,1,'DISCOUNT10')
   const n3 = calculateFinalPrice(100, 'DISCOUNT10')
- 
+  function insecureFunction(userInput: string): void {
+    // Security Issue: Directly concatenating user input into a query (SQL Injection Risk)
+    const query = `SELECT * FROM users WHERE username = '${userInput}'`;
+    console.log("Executing query:", query);
+    // Imagine this query being executed in a real database
+}
+
+function unreliableFunction(): void {
+    // Reliability Issue: Hardcoded credentials (sensitive data exposure)
+    const apiKey = "12345-very-secret-key";
+    console.log(`Using API key: ${apiKey}`);
+}
+
+function poorlyMaintainedFunction(): void {
+    // Maintainability Issue: Deeply nested and complex logic
+    for (let i = 0; i < 10; i++) {
+        if (i % 2 === 0) {
+            for (let j = 0; j < 5; j++) {
+                if (j === 3) {
+                    console.log(`Nested level reached: i=${i}, j=${j}`);
+                }
+            }
+        }
+    }
+}
+
+function duplicateCode(): void {
+    // Duplication Issue: Repeated code with minimal changes
+    console.log("This is duplicate code section 1.");
+    console.log("This is duplicate code section 1.");
+    console.log("This is duplicate code section 1.");
+    console.log("This is duplicate code section 2.");
+    console.log("This is duplicate code section 2.");
+    console.log("This is duplicate code section 2.");
+}
+
+// Call the functions
+insecureFunction("admin' OR 1=1 --");
+unreliableFunction();
+poorlyMaintainedFunction();
+duplicateCode();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
