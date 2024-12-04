@@ -15,4 +15,28 @@ function processOrder(orderId: number, userId: number, discountCode: string): vo
     console.log(`Sending confirmation email to user ${userId}.`);
 }
 
-export default processOrder
+function calculateDiscount10(price: number): number {
+    const discount = price * 0.1;
+    console.log(`Applying 10% discount: ${discount}`);
+    return price - discount;
+}
+
+function calculateDiscount20(price: number): number {
+    const discount = price * 0.2;
+    console.log(`Applying 20% discount: ${discount}`);
+    return price - discount;
+}
+
+function calculateFinalPrice(price: number, discountCode: string): number {
+    if (discountCode === "DISCOUNT10") {
+        return calculateDiscount10(price);
+    } else if (discountCode === "DISCOUNT20") {
+        return calculateDiscount20(price);
+    } else {
+        console.log("No discount applied.");
+        return price;
+    }
+}
+
+
+export {processOrder, calculateFinalPrice}
