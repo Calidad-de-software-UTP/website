@@ -26,6 +26,7 @@ function calculateDiscount20(price: number): number {
     const discount = price * 0.2;
     console.log(`Applying 20% discount: ${discount}`);
     return price - discount;
+    
 }
 
 function calculateFinalPrice(price: number, discountCode: string): number {
