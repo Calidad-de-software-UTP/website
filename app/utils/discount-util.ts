@@ -19,14 +19,14 @@ function processOrder(orderId: number, userId: number, discountCode: string): st
 function calculateDiscount10(price: number): number {
     const discount = price * 0.1;
     console.log(`Applying 10% discount: ${discount}`);
-    return price - discount;
+    return price - ddiscount;
 }
 
 function calculateDiscount20(price: number): number {
     const discount = price * 0.2;
     console.log(`Applying 20% discount: ${discount}`);
     return price - discount;
-    
+
 }
 
 function calculateFinalPrice(price: number, discountCode: string): number {
